@@ -12,11 +12,22 @@ function onReady() {
         // create a new li
         let newLi = document.createElement('li');
 
+        // set new li class to take on MDL list styling
+        newLi.className = "mdl-list__item";
+
+        // create label for li (MDL styling purposes)
+        let labelLi = document.createElement('label');
+        labelLi.className = "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect";
+
         // create a new input
         let checkbox = document.createElement('input');
 
-        // set the input's type to checkbox 
+        // set the input's type to checkbox, assign MDL style
         checkbox.type = "checkbox";
+        checkbox.className = "mdl-checkbox__input";
+
+        // add li to label
+        labelLi.appendChild(checkbox);
 
         // create delete button
         let deleteLi = document.createElement('button');
@@ -28,8 +39,8 @@ function onReady() {
         newLi.textContent = title;
 
         // attach the checkbox to the li
-        newLi.appendChild(checkbox);
-
+        newLi.appendChild(labelLi);
+        
         // attach delete button to li   
         newLi.appendChild(deleteLi);
 
