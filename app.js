@@ -54,6 +54,9 @@ function onReady() {
 
         // empty the input
         newToDoText.value = '';
+        
+        // to register new DOM elements to get MDL to work
+        componentHandler.upgradeElement(labelLi);
 
     });
 }
