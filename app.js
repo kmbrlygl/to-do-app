@@ -16,7 +16,22 @@ function onReady() {
         createNewToDo();
     });
 
-    renderTheUI();
+    renderTheUI() {
+        const toDoList = document.getElementById('toDoList');
+
+        toDoList.textContent = '';
+
+        toDos.forEach(function(toDo)) {
+            const newLi = document.createElement('li');
+            const checkbox = document.createElement('input');
+            checkbox.type = "checkbox";
+
+            newLi.textContent = toDo.title;
+
+            toDoList.appendChild(newLi);
+            newLi.appendChild(checkbox);
+        });
+    }
 }
 
 window.onload = function() {
