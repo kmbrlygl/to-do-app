@@ -2,4 +2,9 @@
     margin: 0 auto;
     width: 500px;
 }
-
+.mdl-checkbox {
+    width: 36px;
+}
+.mdl-button {
+    margin: 0 16px;
+}
