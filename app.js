@@ -9,24 +9,20 @@ function onReady() {
         // get the text
         let title = newToDoText.value;
 
-        // create a new li
+        // create a new li, set new li class to take on MDL list styling
         let newLi = document.createElement('li');
-
-        // set new li class to take on MDL list styling
         newLi.className = "mdl-list__item";
 
-        // create label for li (MDL styling purposes)
+        // create label for new li (MDL styling purposes)
         let labelLi = document.createElement('label');
         labelLi.className = "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect";
 
-        // create a new input
+        // create a new input, set the input's type to checkbox, assign MDL style
         let checkbox = document.createElement('input');
-
-        // set the input's type to checkbox, assign MDL style
         checkbox.type = "checkbox";
         checkbox.className = "mdl-checkbox__input";
 
-        // add li to label
+        // add checkbox to label (MDL styling purposes)
         labelLi.appendChild(checkbox);
 
         // create Delete button
@@ -37,8 +33,8 @@ function onReady() {
         // set the title 
         newLi.textContent = title;
 
-        // attach the checkbox to the li
-        newLi.appendChild(labelLi);
+        // attach the checkbox to the li (in front of it)
+        newLi.prepend(labelLi);
         
         // attach delete button to li   
         newLi.appendChild(deleteLi);
