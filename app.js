@@ -4,6 +4,8 @@ function onReady() {
 
     function createNewToDo() {
         const newToDoText = document.getElementById('newToDoText');
+        if (!newToDoText.value) { return; }
+        
         toDos.push({
             title: newToDoText.value,
             complete: false
