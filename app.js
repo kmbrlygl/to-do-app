@@ -29,11 +29,10 @@ function onReady() {
         // add li to label
         labelLi.appendChild(checkbox);
 
-        // create delete button
+        // create Delete button
         let deleteLi = document.createElement('button');
-
-        // set the button value and type
         deleteLi.textContent = "Delete";
+        deleteLi.className = "mdl-button mdl-js-button"
 
         // set the title 
         newLi.textContent = title;
