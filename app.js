@@ -1,6 +1,6 @@
 function onReady() {
     let id = 0;
-    const toDos = [];
+    let toDos = [];
     const addToDoForm = document.getElementById('addToDoForm');
 
     function createNewToDo() {
@@ -10,7 +10,7 @@ function onReady() {
         toDos.push({
             title: newToDoText.value,
             complete: false,
-            id: id.value
+            id: id
         });
 
         id++; 
@@ -34,8 +34,10 @@ function onReady() {
             deleteLi.textContent = "Delete";
             newLi.textContent = toDo.title;
 
-            deleteLi.addEventListener('click', (removeLi) => {
-                removeLi.target.parentNode.remove();
+            deleteLi.addEventListener('click', () => {
+                toDos = toDos.filter(toDoItem => toDoItem.id != toDo.id);
+
+                renderTheUI();
             });
 
             newLi.appendChild(deleteLi);
